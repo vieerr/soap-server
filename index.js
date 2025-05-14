@@ -2,8 +2,11 @@ const express = require('express');
 const soap = require('soap');
 const bodyParser = require('body-parser');
 const http = require('http');
+const cors = require('cors');
+
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.raw({ type: () => true, limit: '5mb' }));
 
 // SOAP service definition
